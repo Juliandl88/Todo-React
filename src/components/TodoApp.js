@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Todo from "./Todo";
+import "./TodoApp.css";
 
 export default function TodoApp() {
   const [title, setTitle] = useState("");
@@ -44,6 +45,7 @@ export default function TodoApp() {
 
   return (
     <div className="todoContainer">
+      <h1 className="title">Todo List</h1>
       <form className="todoCreateForm" onSubmit={handleSubmit}>
         <input className="todoInput" value={title} onChange={handleChange} />
         <input

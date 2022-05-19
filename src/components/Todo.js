@@ -28,7 +28,7 @@ export default function Todo({ item, onUpdate, onDelete }) {
           onChange={handleChange}
           value={newValue}
         />
-        <button onClick={handleClickUpdateTodo}>Actualizar</button>
+        <button className="buttonUpdate" onClick={handleClickUpdateTodo}>Actualizar</button>
       </form>
     );
   }
@@ -36,8 +36,9 @@ export default function Todo({ item, onUpdate, onDelete }) {
   function TodoElement() {
     return (
       <div className="todoInfo">
-        {item.title} <button onClick={() => setIsEdit(true)}>Editar</button>
-        <button className="button" onClick={(e)=>onDelete(item.id)}>Eliminar</button>
+          <span className="todoTitle">{item.title}</span>
+       <button className="button" onClick={() => setIsEdit(true)}>Editar</button>
+        <button className="buttonDelete" onClick={(e)=>onDelete(item.id)}>Eliminar</button>
       </div>
     );
   }
